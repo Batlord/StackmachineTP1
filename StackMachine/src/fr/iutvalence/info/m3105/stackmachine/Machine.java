@@ -7,7 +7,7 @@ public class Machine
 
 	public Machine(CPU cpu, Memory programMemory, Stack expStack, Stack callStack, IO ioSystem)
 	{
-		super();
+		super(); 
 		this.cpu = cpu;
 		this.programMemory = programMemory;
 		this.cpu.wireToProgramMemory(programMemory);
