@@ -1,0 +1,13 @@
+class Memory
+!!!130435.java!!!	Memory(in startAdress : int, in endAdress : int)
+		if (startAdress < 0 || endAdress < 0){
+			throw new InvalidParametersException();}
+		this.startAddress = startAdress;
+		this.endAddress = endAdress;
+		this.data = new int[endAdress-startAdress];
+!!!130563.java!!!	getStartAddress() : int
+		return startAddress;
+!!!130691.java!!!	write(in currentAddress : int, in opCode : int) : void
+		data[currentAddress] = opCode;
+!!!130819.java!!!	read(in adress : int) : int
+		return data[adress];

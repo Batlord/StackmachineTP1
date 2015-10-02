@@ -2,21 +2,27 @@ package fr.iutvalence.info.m3105.stackmachine;
 
 public class Memory {
 
-	public Memory(int i, int j) throws InvalidParametersException {
-		if (i < 0 || j < 0){
-			throw new InvalidParametersException();
-		}
-		// TODO Auto-generated constructor stub
+	private final int startAddress;
+	private final int endAddress;
+	private final int data[];
+	
+	public Memory(int startAdress, int endAdress) throws InvalidParametersException {
+		if (startAdress < 0 || endAdress < 0){
+			throw new InvalidParametersException();}
+		this.startAddress = startAdress;
+		this.endAddress = endAdress;
+		this.data = new int[endAdress-startAdress];
 	}
 
 	public int getStartAddress() {
-		// TODO Auto-generated method stub
-		return 0;
+		return startAddress;
 	}
 
-	public void write(int currentAddress, Object opCode) {
-		// TODO Auto-generated method stub
-		
+	public void write(int currentAddress, int opCode) throws AddressOutOfBoundsException {
+		data[currentAddress] = opCode;
 	}
 
+	public int read(int adress) throws AddressOutOfBoundsException{
+		return data[adress];
+	}
 }

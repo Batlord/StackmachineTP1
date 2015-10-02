@@ -1,0 +1,20 @@
+class Stack
+!!!131331.java!!!	Stack(in size : int)
+		super();
+		if (size < 0){
+			throw new InvalidParametersException();
+		}
+		this.size = size;
+		values = new int[size];
+		pos = -1;
+!!!131459.java!!!	push(in read : int) : void
+		pos++;
+		values[pos] = read;	
+!!!131587.java!!!	plop() : int
+		int ret = values[pos];
+		values[pos] = 0;
+		pos--;		
+		return ret;
+!!!131715.java!!!	dup() : void
+		values[pos+1] = values[pos];
+		pos++;

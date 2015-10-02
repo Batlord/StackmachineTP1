@@ -1,0 +1,11 @@
+window_sizes 1200 896 300 900 682 82
+diagrams
+  active  classdiagram_ref 128003 // Diagram
+    801 603 100 4 0 0
+end
+show_stereotypes
+selected class_ref 129539 // StackUnderflowException
+open
+  classview_ref 128003 // stackmachine
+end
+end
