@@ -62,84 +62,84 @@ public class CPU
 					}
 					case ADD:
 					{
-						int a = expStack.plop();
-						int b = expStack.plop();
+						int a = expStack.pop();
+						int b = expStack.pop();
 						expStack.push(a+b);
 						break;
 					}
 					case SUB:
 					{
-						int a = expStack.plop();
-						int b = expStack.plop();
+						int a = expStack.pop();
+						int b = expStack.pop();
 						expStack.push(a-b);
 						break;
 					}
 					case MUL:
 					{
-						int a = expStack.plop();
-						int b = expStack.plop();
+						int a = expStack.pop();
+						int b = expStack.pop();
 						expStack.push(a*b);
 						break;
 					}
 					case DIV:
 					{
-						int a = expStack.plop();
-						int b = expStack.plop();
+						int a = expStack.pop();
+						int b = expStack.pop();
 						expStack.push(a/b);
 						break;
 					}
 					case MOD:
 					{
-						int a = expStack.plop();
-						int b = expStack.plop();
+						int a = expStack.pop();
+						int b = expStack.pop();
 						expStack.push(a%b);
 						break;
 					}
 					case NEG:
 					{
-						int a = expStack.plop();
+						int a = expStack.pop();
 						expStack.push(-a);
 						break;
 					}
 					case LT:
 					{
-						int a = expStack.plop();
-						int b = expStack.plop();
+						int a = expStack.pop();
+						int b = expStack.pop();
 						expStack.push(b < a ? 0 : 1);
 						break;
 					}
 					case LE:
 					{
-						int a = expStack.plop();
-						int b = expStack.plop();
+						int a = expStack.pop();
+						int b = expStack.pop();
 						expStack.push(b <= a ? 0 : 1);
 						break;
 					}
 					case GT:
 					{
-						int a = expStack.plop();
-						int b = expStack.plop();
+						int a = expStack.pop();
+						int b = expStack.pop();
 						expStack.push(b > a ? 0 : 1);
 						break;
 					}
 					case GE:
 					{
-						int a = expStack.plop();
-						int b = expStack.plop();
+						int a = expStack.pop();
+						int b = expStack.pop();
 						expStack.push(b >= a ? 0 : 1);
 						break;
 					}
 					case EQ:
 					{
-						int a = expStack.plop();
-						int b = expStack.plop();
+						int a = expStack.pop();
+						int b = expStack.pop();
 						expStack.push(b == a ? 0 : 1);
 						break;
 					}
 					case NE:
 					{
-						int a = expStack.plop();
-						int b = expStack.plop();
+						int a = expStack.pop();
+						int b = expStack.pop();
 						expStack.push(b != a ? 0 : 1);
 						break;
 					}
@@ -151,7 +151,7 @@ public class CPU
 					}
 					case OUT:
 					{
-						ioSystem.write(expStack.plop());
+						ioSystem.write(expStack.pop());
 						break;
 					}
 					case CALL:
@@ -161,7 +161,7 @@ public class CPU
 					}
 					case RET:
 					{
-						programCounter = callStack.plop();
+						programCounter = callStack.pop();
 						break;
 					}
 					case JP:
@@ -171,7 +171,7 @@ public class CPU
 					}
 					case JZ:
 					{
-						int a = expStack.plop();
+						int a = expStack.pop();
 						if(a == 0)
 							programCounter = a;
 						break;
@@ -183,7 +183,7 @@ public class CPU
 					}
 					case POP:
 					{
-						expStack.plop();
+						expStack.pop();
 						break;
 					}
 					default:

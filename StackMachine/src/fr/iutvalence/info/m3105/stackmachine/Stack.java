@@ -21,7 +21,7 @@ public class Stack {
 		values[pos] = read;	
 	}
 
-	public int plop() throws StackUnderflowException {
+	public int pop() throws StackUnderflowException {
 		int ret = values[pos];
 		values[pos] = 0;
 		pos--;		
